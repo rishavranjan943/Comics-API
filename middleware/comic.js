@@ -1,5 +1,7 @@
 const { body, validationResult } = require('express-validator');
 
+
+// validating post operation
 const createComic = [
   body('book_name')
     .notEmpty()
@@ -59,6 +61,8 @@ const createComic = [
   },
 ];
 
+
+// validating put opration
 const validateComic = [
   body('book_name')
     .optional()

@@ -1,5 +1,7 @@
 const Comic=require('../models/comic')
 
+
+// Creating new Instance
 const createComic=async(comicData)=>{
     try {
         const newComic=await Comic.create(comicData)
@@ -9,6 +11,8 @@ const createComic=async(comicData)=>{
     }
 }
 
+
+// Updating existing instance
 const updateComic = async (id, updateData) => {
   try {
     const updatedComic = await Comic.findByIdAndUpdate(id, updateData, {
@@ -29,6 +33,7 @@ const updateComic = async (id, updateData) => {
 };
 
 
+// Deleteing exisitng instance
 const deleteComic = async (id) => {
   try {
     const deletedComic = await Comic.findByIdAndDelete(id);
@@ -46,6 +51,7 @@ const deleteComic = async (id) => {
 };
 
 
+// Get all comic by id
 const getComic =async(id) => {
   try {
     const comic = await Comic.findById(id);
@@ -62,6 +68,8 @@ const getComic =async(id) => {
   }
 }
 
+
+// Get all comic with pagination,sorting,filtering
 
 const getComicAll = async ({ page, limit, sortBy, order, filters }) => {
   try {

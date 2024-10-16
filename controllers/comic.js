@@ -1,5 +1,7 @@
 const {createComic,updateComic,deleteComic,getComic,getComicAll}=require('../service/comic')
 
+
+// creating comic
 const createComicBook=async (req,res,next)=>{
     try{
         const data=req.body
@@ -15,6 +17,8 @@ const createComicBook=async (req,res,next)=>{
     }
 }
 
+
+// updating comic
 const updateComicBook = async (req, res, next) => {
   try {
     const comicId = req.params.id; 
@@ -29,6 +33,8 @@ const updateComicBook = async (req, res, next) => {
   }
 };
 
+
+// delteing comic
 const deleteComicBook = async (req, res, next) => {
   try {
     const comicId = req.params.id; 
@@ -43,6 +49,8 @@ const deleteComicBook = async (req, res, next) => {
 };
 
 
+
+// getting comic by id
 const getComicBook=async (req, res, next) => {
   try {
     const comicId = req.params.id;
@@ -56,7 +64,7 @@ const getComicBook=async (req, res, next) => {
   }
 };
 
-
+// geeting comic with filters,pages
 const getAllComic = async (req, res, next) => {
   try {
     const { page = 1, limit = 10, sortBy = 'title', order = 'asc', ...filters } = req.query;

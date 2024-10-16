@@ -1,5 +1,7 @@
 const mongoose=require('mongoose');
 
+
+// model for comic
 const ComicSchema=new mongoose.Schema({
     book_name:{
         type:String,
